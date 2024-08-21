@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie App</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
+
+    <!-- external css file -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white">
+    <!-- Header -->
+    <header class="flex flex-col justify-between items-center border-b-2 p-2 sm:p-4 gap-3 border-[#4e0bec]">
+        <div class="flex flex-row justify-between items-center w-full">
+            <!-- Logo -->
+            <div class="logo flex items-center">
+                <img class="w-8 sm:w-12" src="./assets/logo.png" alt="movie_app_logo" />
+                <span
+                    class="font-black text-[16px] sm:text-xl bg-gradient-to-r from-[#bad133] to-[#4e0bec] bg-clip-text text-transparent">Movie
+                    App</span>
+            </div>
+
+            <!-- Desktop Search Box -->
+            <div class="search hidden sm:flex items-center relative w-1/2">
+                <input type="text" placeholder="Search your favourite movie..."
+                    class="w-full border-2 border-[#4e0bec] rounded pl-2 pr-6 py-1 bg-transparent text-white placeholder-gray-400 focus:outline-none" />
+                <i class="absolute right-1 font-black bi bi-search text-[#4e0bec] cursor-pointer"></i>
+
+                <!-- div to show search result in desktop-->
+                <div>
+                    <div class="search_result desktop hidden absolute bg-white text-black w-[98%] left-[1%] top-9 z-40">
+                        <!-- <p class="hover:bg-gray-400 cursor-pointer px-1 capitalize">list 1 </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Profile Menu -->
+            <div class="profile relative z-50 capitalize">
+                <div class="username cursor-pointer">
+                    <img class="w-8 sm:w-12 inline" src="./assets/user.png" alt="user_profile" /><span
+                        class="sm:inline hidden"> username</span>
+                </div>
+                <div
+                    class="menu hidden absolute top-8 sm:top-12 flex gap-1 w-36 flex-col right-0 bg-white p-2 text-black rounded-md border-2 border-[#4e0bec]">
+                    <a class="border-b-[1px] pb-2" href="#"><i class="bi bi-person"></i> profile</a>
+                    <a class="border-b-[1px] pb-2" href="#"><i class="bi bi-film"></i> watch later</a>
+                    <a class="history_btn border-b-[1px] pb-2" href="#"><i class="bi bi-clock-history"></i> history</a>
+                    <a class="border-b-[1px] pb-2" href="#"><i class="bi bi-heart"></i> favorite</a>
+                    <a class="border-b-[1px] pb-2" href="#"><i class="bi bi-box-arrow-in-left"></i> logout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- mobile search box -->
+        <div class="search sm:hidden flex items-center relative w-full">
+            <input type="text" placeholder="Search your favourite movie..."
+                class="w-full border-2 border-[#4e0bec] rounded pl-2 pr-6 py-1 bg-transparent text-white placeholder-gray-400 focus:outline-none" />
+            <i class="absolute right-1 font-black bi bi-search text-[#4e0bec] cursor-pointer"></i>
+            <!-- div to show search result -->
+            <div>
+                <div class="search_result mobile hidden absolute bg-white text-black w-[98%] left-[1%] top-9 z-40">
+                    <!-- <p class="hover:bg-gray-400 cursor-pointer px-1 capitalize overflow-hidden movie-title">list 1 </p> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mb-4">
+        <!-- homepage -->
+        <div class="homepage">
+            <!-- genres  -->
+            <div class="slider relative w-full overflow-x-auto my-2 mb-2 border-b-2 border-[#4e0bec]">
+                <div class="slides flex mt-1 mb-2 h-fit gap-3 mx-2">
+                    <!-- genre -1  -->
+                </div>
+            </div>
+
+            <!-- show all movies -->
+            <div class="movie-list flex flex-wrap gap-4 justify-center">
+                <!-- Movie Item 1 -->
+                <!-- <div class="movie-item bg-gray-800 rounded-lg overflow-hidden shadow-lg w-48 h-64">
+                <img src="./assets/user.png" alt="Movie 1 Image" class="w-1/2" />
+                <div class="movie-info p-2">
+                    <div><i class="favourite bi-heart mr-2 cursor-pointer"></i><i class="watch_later text-xl bi bi-plus cursor-pointer"></i></div>
+                    <div class="movie-title text-lg font-bold text-white overflow-hidden">
+                        Movie Title 1 Movie Title 1
+                    </div>
+                    <p class="description text-gray-400 overflow-hidden">Some description about the movie. This description might be very long and should be truncated</p>
+                    <button class="text-blue-500 text-sm cursor-pointer">Watch Now>></button>
+                </div>
+            </div> -->
+            </div>
+        </div>
+
+        <!-- page to show single movie -->
+        <div class="movie_page hidden">
+            <div class="pb-2 border-b-2">
+                <div class="back_btn w-fit hover:text-blue-500 cursor-pointer "><i
+                        class="bi bi-arrow-left text-lg mr-1"></i>Back</div>
+            </div>
+            <div class="movie_div">
+                <!-- show selected movie here -->
+            </div>
+        </div>
+
+        <!-- page to show watch later movies -->
+        <div class="watch_later hidden">
+            <div class="pb-2 border-b-2">
+                <div class="w-fit hover:text-blue-500 cursor-pointer "><i class="bi bi-arrow-left text-lg mr-1"></i>Back
+                </div>
+            </div>
+            <div class="watch_later_div flex flex-wrap gap-4 justify-center">
+                <!-- show watch later movies here -->
+            </div>
+        </div>
+
+
+        <!-- page to show history  -->
+        <div class="history hidden">
+            <div class="pb-2 border-b-2 flex justify-between">
+                <div class="w-fit hover:text-blue-500 cursor-pointer "><i class="bi bi-arrow-left text-lg mr-1"></i>Back
+                </div>
+                <button
+                    class="remove_all_history mt-1 rounded-lg cursor-pointer bg-red-500 px-2 sm:px-6 py-0.5 text-[13px] sm:text-sm sm:py-1">Clear
+                    All</button>
+            </div>
+            <div class="history_div flex flex-wrap gap-4 justify-center pt-1">
+                <!-- show history movies here -->
+
+
+            </div>
+        </div>
+    </main>
+</body>
+
+<!-- js file -->
+<script type="module" src="./script.js"></script>
+
+</html>
